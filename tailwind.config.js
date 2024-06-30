@@ -3,16 +3,8 @@ module.exports = {
 		fontFamily: {
 			sans: 'Lexend',
 			lexend: 'Lexend',
-			poetsen: '"Poetsen One"',
-			pm: ['"Permanent Marker"', 'sans-serif'],
-			jacquard: ['"Jacquard 12"'],
-			shadow: '"Shadows Into Light"',
-			briem: '"Briem Hand"',
-			dancing: 'Dancing\\ Script',
-			libre: '"Libre Barcode 39"',
-			amatic: '"Amatic SC"',
-			micro: '"Micro 5 Charted"',
-			jersey: '"Jersey 15"',
+			logo: '"Roboto Slab"',
+			playfair: 'Playfair',
 		},
 
 		screens: {

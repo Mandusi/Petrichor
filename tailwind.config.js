@@ -5,6 +5,7 @@ module.exports = {
 			lexend: 'Lexend',
 			logo: '"Roboto Slab"',
 			playfair: 'Playfair',
+			bodoni: '"Bodoni Moda"',
 		},
 
 		screens: {
@@ -29,6 +30,7 @@ module.exports = {
 					900: '#2A2A2A',
 					950: '#141414',
 				},
+				mainbg: '#efe5dc',
 			},
 
 			fontWeight: {

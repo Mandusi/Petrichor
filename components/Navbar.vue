@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="bg-mainbg/90 fixed top-0 z-50 flex h-16 w-full items-center justify-center px-20"
+		class="fixed top-0 z-50 flex h-16 w-full items-center justify-center bg-mainbg/90 px-20"
 	>
 		<div class="flex w-full max-w-[1200px] items-center justify-between">
 			<div class="flex items-center justify-center">
@@ -8,11 +8,11 @@
 			</div>
 
 			<div class="flex items-center gap-8 font-bold text-slate-600">
-				<span>ANASAYFA</span>
-				<span>HAKKIMIZDA</span>
-				<span>MENTORLER</span>
-				<Span>SSS</Span>
-				<span>İLETİŞİM</span>
+				<button @click="emit('toHome')">ANASAYFA</button>
+				<button @click="emit('toFaq')">HAKKIMIZDA</button>
+				<button @click="emit('toMentors')">MENTORLER</button>
+				<button @click="emit('toFaq')">SSS</button>
+				<button>İLETİŞİM</button>
 			</div>
 
 			<div class="font flex items-center bg-amber-400 p-2 px-5 font-bold text-slate-900">
@@ -22,6 +22,8 @@
 	</div>
 </template>
 
-<script></script>
+<script setup>
+const emit = defineEmits(['toFaq', 'toHome', 'toMentors'])
+</script>
 
 <style scoped></style>

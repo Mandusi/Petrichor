@@ -1,15 +1,55 @@
 <template>
-	<div class="flex w-full">
-		<div v-for="(category, index) in faqs" :key="index" class="flex flex-col">
-			<h1> {{ category.category }}</h1>
-			<div v-for="item in category.questions" :key="item">
-				<h3>{{ item.question }}</h3> <p>{{ item.answer }}</p>
+	<div ref="ScrollPosition" class="felx pt-20" @click="hideAnswer">
+		<div
+			class="flex flex-col items-center justify-center gap-10 transition-all duration-300"
+		>
+			<div
+				v-for="(category, index) in faqs"
+				:key="index"
+				class="flex items-start justify-end gap-20"
+			>
+				<h1 class="w-96 text-right text-3xl font-extrabold"> {{ category.category }}</h1>
+				<div class="w-96 divide-y">
+					<div
+						v-for="(item, id) in category.questions"
+						:key="id"
+						class="flex h-full flex-col"
+						@click="showAnswer(item.question)"
+					>
+						<h3 class="cursor-pointer py-2 text-xl font-semibold"
+							>{{ item.question }}
+						</h3>
+
+						<div
+							class="flex h-0 overflow-hidden transition-all duration-300 ease-in-out"
+							:class="{
+								'!h-full': activeQuestion === item.question,
+							}"
+						>
+							<span>
+								{{ item.answer }}
+							</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
 </template>
 
-<script lang="ts">
+<script setup>
+const activeQuestion = ref()
+const ScrollPosition = ref()
+defineExpose({ ScrollPosition })
+
+function showAnswer(questionId) {
+	activeQuestion.value = questionId
+}
+
+function hideAnswer(event) {
+	if (event.target.nodeName !== 'H3') activeQuestion.value = null
+}
+
 const faqs = [
 	{
 		category: 'Genel Sorular',
@@ -120,4 +160,15 @@ const faqs = [
 ]
 </script>
 
-<style scoped></style>
+<style scoped>
+.p-item {
+	height: 0;
+	overflow: hidden;
+	transition: 500ms;
+}
+
+.p-shown {
+	height: auto;
+	transition: 500ms;
+}
+</style>

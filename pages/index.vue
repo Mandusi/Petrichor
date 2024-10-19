@@ -7,13 +7,10 @@
 	<Home ref="HomeEl" />
 	<Mentors ref="MentorsEl" />
 	<FAQ ref="FaqEl" />
-	<AccordionList />
+	<Contact />
 </template>
 
 <script setup>
-import AccordionList from '../components/AccordionList.vue'
-import Mentors from '../components/Mentors.vue'
-
 const HomeEl = ref()
 const MentorsEl = ref()
 const FaqEl = ref()

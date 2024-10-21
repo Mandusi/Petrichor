@@ -1,15 +1,37 @@
 <template>
-	<div class="mx-auto my-5 w-full max-w-[1200px] bg-white/40 p-8 shadow-md">
+	<div
+		ref="ScrollPosition"
+		class="mx-auto my-5 w-full max-w-[1200px] bg-white/40 p-8 shadow-md"
+	>
 		<div class="flex w-full gap-8">
 			<div class="w-3/5 border-r-2 px-8">
-				<h2 class="mb-6 text-right text-7xl font-bold">İletişime Geç</h2>
+				<h2 class="mb-6 text-center text-7xl font-bold">İletişime Geç</h2>
 
-				<p class="px-4 text-right text-lg text-gray-600"
+				<p class="px-4 text-center text-lg text-gray-600"
 					>Deneyimli mentorlarımızla iletişim kurarak kariyerinize yön verebilirsiniz.
 					Sorularınızı sormaktan çekinmeyin; her adımda yanınızdayız ve size destek
 					olmaktan mutluluk duyarız. Geleceğinizi şekillendirmek için ilk adımı atın!</p
 				>
+				<div class="flex items-center justify-around p-5">
+					<div class="flex flex-col items-center justify-center">
+						<a href="https://www.instagram.com">
+							<img src="/public/insta-icon.webp" class="w-20" alt="instagram" />
+							Instagram
+						</a>
+					</div>
+					<div class="flex flex-col items-center justify-center">
+						<a href="https://www.linkedin.com">
+							<img src="/public/linkedin-icon.webp" class="w-20" alt="linkedin" />
+							<span>LinkedIn</span>
+						</a>
+					</div>
+					<div class="flex flex-col items-center justify-center">
+						<img src="/public/phone-icon.webp" alt="phone" class="w-20" />
+						<span>+90 555 555 12 42</span>
+					</div>
+				</div>
 			</div>
+
 			<form id="contactForm" class="w-2/5" @submit.prevent="handleSubmit">
 				<div class="mb-5">
 					<label for="name" class="block text-sm font-medium text-gray-700"
@@ -76,6 +98,9 @@
 import emailjs from '@emailjs/browser'
 
 const config = useRuntimeConfig()
+
+const ScrollPosition = ref()
+defineExpose({ ScrollPosition })
 
 const options = {
 	publicKey: config.public.EMAIL_PUBLIC_KEY,

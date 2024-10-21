@@ -18,7 +18,7 @@
 					}}</p>
 				</div>
 			</div>
-			<div class="flip-card-back">
+			<div class="flip-card-back flex h-full flex-col">
 				<h1>John Doe</h1>
 				<p>Architect & Engineer</p>
 				<p
@@ -27,9 +27,9 @@
 				>
 
 				<div
-					class="font m-5 flex items-center justify-center bg-amber-400 p-2 font-bold text-slate-900"
+					class="font mx-5 mb-10 mt-auto flex items-center justify-center bg-amber-400 p-2 font-bold text-slate-900"
 				>
-					<span>Hemen Başvur</span>
+					<span class="">Hemen Başvur</span>
 				</div>
 			</div>
 		</div>

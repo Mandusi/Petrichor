@@ -3,19 +3,22 @@
 		@to-faq="navBtnHandler(FaqEl)"
 		@to-home="navBtnHandler(HomeEl)"
 		@to-mentors="navBtnHandler(MentorsEl)"
+		@to-contact="navBtnHandler(ContactEl)"
 	/>
 	<Home ref="HomeEl" />
 	<Mentors ref="MentorsEl" />
 	<FAQ ref="FaqEl" />
-	<Contact />
+	<Contact ref="ContactEl" />
 </template>
 
 <script setup>
 const HomeEl = ref()
 const MentorsEl = ref()
 const FaqEl = ref()
+const ContactEl = ref()
 
 function navBtnHandler(element) {
 	element.ScrollPosition?.scrollIntoView({ behavior: 'smooth' })
+	console.log(element)
 }
 </script>

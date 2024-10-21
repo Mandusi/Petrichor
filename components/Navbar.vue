@@ -12,7 +12,7 @@
 				<button @click="emit('toFaq')">HAKKIMIZDA</button>
 				<button @click="emit('toMentors')">MENTORLER</button>
 				<button @click="emit('toFaq')">SSS</button>
-				<button>İLETİŞİM</button>
+				<button @click="emit('toContact')">İLETİŞİM</button>
 			</div>
 
 			<div class="font flex items-center bg-amber-400 p-2 px-5 font-bold text-slate-900">
@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-const emit = defineEmits(['toFaq', 'toHome', 'toMentors'])
+const emit = defineEmits(['toFaq', 'toHome', 'toMentors', 'toContact'])
 </script>
 
 <style scoped></style>

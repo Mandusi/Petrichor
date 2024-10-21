@@ -20,7 +20,7 @@
 						</a>
 					</div>
 					<div class="flex flex-col items-center justify-center">
-						<a href="https://www.linkedin.com">
+						<a href="https://www.linkedin.com" class="flex items-center justify-center">
 							<img src="/public/linkedin-icon.webp" class="w-20" alt="linkedin" />
 							<span>LinkedIn</span>
 						</a>

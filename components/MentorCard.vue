@@ -19,17 +19,17 @@
 				</div>
 			</div>
 			<div class="flip-card-back flex h-full flex-col">
-				<h1>John Doe</h1>
-				<p>Architect & Engineer</p>
 				<p
-					>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nostrum debitis,
-					nisi perspiciatis fugit repellendus? Atque praesentium enim natus libero!</p
+					>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis doloremque
+					neque similique id fugiat blanditiis pariatur fuga sapiente, repudiandae, cum
+					voluptas assumenda accusantium? Ut culpa nostrum debitis blanditiis, dolorem
+					inventore?</p
 				>
 
 				<div
 					class="font mx-5 mb-10 mt-auto flex items-center justify-center bg-amber-400 p-2 font-bold text-slate-900"
 				>
-					<span class="">Hemen Başvur</span>
+					<button class="" @click="emit('toContact')">Hemen Başvur</button>
 				</div>
 			</div>
 		</div>
@@ -37,6 +37,8 @@
 </template>
 
 <script setup>
+const emit = defineEmits(['toContact'])
+
 defineProps({
 	name: { type: String, required: true },
 	title: { type: String, required: true },

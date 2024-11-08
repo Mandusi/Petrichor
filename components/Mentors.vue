@@ -1,7 +1,7 @@
 <template>
 	<div
 		ref="ScrollPosition"
-		class="mt-10 flex w-screen flex-col items-center justify-center gap-6 overflow-hidden pt-10"
+		class="mt-10 flex w-screen flex-col items-center justify-center gap-6 pt-10"
 	>
 		<h1 class="mt-5 max-w-[780px] text-center font-playfair text-6xl"
 			>Mentorların Desteği ile Hukuk Dünyasında Zirveye Tırman</h1
@@ -15,6 +15,7 @@
 					:title="mentor.title"
 					:promotion="mentor.promotion"
 					:profile-photo="mentor.profilePhoto"
+					@to-contact="emit('toContact')"
 				/>
 			</div>
 		</div>
@@ -25,9 +26,7 @@
 const ScrollPosition = ref()
 defineExpose({ ScrollPosition })
 
-const Slider = ref()
-
-console.log(Slider)
+const emit = defineEmits(['toContact'])
 
 const mentors = [
 	{

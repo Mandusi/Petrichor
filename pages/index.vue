@@ -6,7 +6,7 @@
 		@to-contact="navBtnHandler(ContactEl)"
 	/>
 	<Home ref="HomeEl" />
-	<Mentors ref="MentorsEl" />
+	<Mentors ref="MentorsEl" @to-contact="navBtnHandler(ContactEl)" />
 	<FAQ ref="FaqEl" />
 	<Contact ref="ContactEl" />
 </template>
@@ -19,6 +19,5 @@ const ContactEl = ref()
 
 function navBtnHandler(element) {
 	element.ScrollPosition?.scrollIntoView({ behavior: 'smooth' })
-	console.log(element)
 }
 </script>

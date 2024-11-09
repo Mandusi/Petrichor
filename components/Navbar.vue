@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="fixed top-0 z-50 flex h-16 w-full items-center justify-center bg-mainbg/90 px-20"
+		class="fixed top-0 z-50 flex h-16 w-full items-center justify-center bg-mainbg bg-opacity-70 px-20 hover:bg-opacity-95"
 	>
 		<div class="flex w-full max-w-[1200px] items-center justify-between">
 			<div class="flex items-center justify-center">

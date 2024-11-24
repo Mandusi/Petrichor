@@ -1,75 +1,43 @@
 <template>
-	<!-- <div
+	<div
 		ref="ScrollPosition"
-		class="mt-10 flex w-screen flex-col items-center justify-center gap-6 pt-10"
+		class="mx-auto mt-10 flex w-screen max-w-[1200px] flex-col items-center justify-center gap-6 self-center pt-10"
 	>
 		<h1 class="mt-5 max-w-[780px] text-center font-playfair text-6xl"
 			>Mentorların Desteği ile Hukuk Dünyasında Zirveye Tırman</h1
 		>
-		<div class="flex flex-col">
-			<div ref="Slider" class="flex items-end gap-5 duration-500">
-				<MentorCard
+		<div class="flex">
+			<swiper-container
+				class="max-w-[1200px]"
+				slides-per-view="4"
+				navigation="true"
+				pagination="false"
+				loop="true"
+				auto-play="true"
+			>
+				<swiper-slide
 					v-for="(mentor, index) in mentors"
 					:key="index"
-					:name="mentor.name"
-					:title="mentor.title"
-					:promotion="mentor.promotion"
-					:profile-photo="mentor.profilePhoto"
-					@to-contact="emit('toContact')"
-				/>
-			</div>
+					class="flex items-end gap-5 duration-500"
+				>
+					<MentorCard
+						:name="mentor.name"
+						:title="mentor.title"
+						:promotion="mentor.promotion"
+						:profile-photo="mentor.profilePhoto"
+						@to-contact="emit('toContact')"
+					/>
+				</swiper-slide>
+			</swiper-container>
 		</div>
-	</div> -->
-
-	<!-- Slider main container -->
-	<div class="swiper">
-		<!-- Additional required wrapper -->
-		<div class="swiper-wrapper">
-			<!-- Slides -->
-			<div class="swiper-slide">Slide 1</div>
-			<div class="swiper-slide">Slide 2</div>
-			<div class="swiper-slide">Slide 3</div>
-			...
-		</div>
-		<!-- If we need pagination -->
-		<div class="swiper-pagination"></div>
-
-		<!-- If we need navigation buttons -->
-		<div class="swiper-button-prev"></div>
-		<div class="swiper-button-next"></div>
-
-		<!-- If we need scrollbar -->
-		<div class="swiper-scrollbar"></div>
 	</div>
 </template>
 
 <script setup>
-import Swiper from 'swiper'
-import { Navigation, Pagination } from 'swiper/modules'
-
-const swiper = new Swiper('.swiper', {
-	// Optional parameters
-	modules: [Navigation, Pagination],
-	loop: true,
-
-	// If we need pagination
-	pagination: {
-		el: '.swiper-pagination',
-	},
-
-	// Navigation arrows
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	},
-
-	// And if we need scrollbar
-	scrollbar: {
-		el: '.swiper-scrollbar',
-	},
-})
-
-console.log(swiper)
+// import function to register Swiper custom elements
+import { register } from 'swiper/element/bundle'
+// register Swiper custom elements
+register()
 
 const ScrollPosition = ref()
 defineExpose({ ScrollPosition })

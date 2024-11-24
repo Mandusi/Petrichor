@@ -6,6 +6,7 @@ module.exports = {
 			logo: '"Roboto Slab"',
 			playfair: 'Playfair',
 			bodoni: '"Bodoni Moda"',
+			abel: 'Abel',
 		},
 
 		screens: {

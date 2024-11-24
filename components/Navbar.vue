@@ -4,7 +4,8 @@
 	>
 		<div class="flex w-full max-w-[1200px] items-center justify-between">
 			<div class="flex items-center justify-center">
-				<span class="font-logo text-3xl font-extrabold text-slate-800">PETRİKOR</span>
+				<img src="/public/logoPetrikor.png" alt="logo" class="w-12" />
+				<!-- <span class="font-logo text-3xl font-extrabold text-slate-800">PETRİKOR</span> -->
 			</div>
 
 			<div class="flex items-center gap-8 font-bold text-slate-600">

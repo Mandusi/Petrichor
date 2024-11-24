@@ -1,5 +1,5 @@
 <template>
-	<div ref="ScrollPosition" class="felx pt-20" @click="hideAnswer">
+	<div ref="ScrollPosition" class="felx mx-auto max-w-[1200px] pt-20" @click="hideAnswer">
 		<div
 			class="flex flex-col items-center justify-center gap-10 transition-all duration-300"
 		>

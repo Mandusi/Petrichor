@@ -5,7 +5,7 @@
 		@to-mentors="navBtnHandler(MentorsEl)"
 		@to-contact="navBtnHandler(ContactEl)"
 	/>
-	<Home1 ref="HomeEl" />
+	<Home ref="HomeEl" />
 	<Mentors ref="MentorsEl" @to-contact="navBtnHandler(ContactEl)" />
 	<AboutUs />
 	<FAQ ref="FaqEl" />

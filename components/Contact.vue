@@ -16,18 +16,17 @@
 					<div class="flex flex-col items-center justify-center">
 						<a href="https://www.instagram.com">
 							<img src="/public/insta-icon.png" class="w-20" alt="instagram" />
-							Instagram
 						</a>
 					</div>
 					<div class="flex flex-col items-center justify-center">
 						<a href="https://www.linkedin.com" class="flex items-center justify-center">
 							<img src="/public/linkedin-icon.png" class="w-20" alt="linkedin" />
-							<span>LinkedIn</span>
+							<span></span>
 						</a>
 					</div>
 					<div class="flex flex-col items-center justify-center">
 						<img src="/public/phone-icon.png" alt="phone" class="w-20" />
-						<span>+90 555 555 12 42</span>
+						<span></span>
 					</div>
 				</div>
 			</div>

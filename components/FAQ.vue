@@ -1,19 +1,24 @@
 <template>
-	<div ref="ScrollPosition" class="felx mx-auto max-w-[1200px] pt-20" @click="hideAnswer">
+	<div ref="ScrollPosition" class="p-5 md:p-10" @click="hideAnswer()">
 		<div
-			class="flex flex-col items-center justify-center gap-10 transition-all duration-300"
+			class="flex flex-col items-center justify-center gap-10 rounded-3xl bg-white p-10 pt-20 transition-all duration-300"
 		>
+			<div class="max-w-[800px]">
+				<h1 class="image-text max-w-[800px] text-center font-mega text-7xl font-extrabold"
+					>SIKÇA SORULAN SORULAR</h1
+				>
+			</div>
 			<div
-				v-for="(category, index) in faqs"
+				v-for="(faq, index) in faqs"
 				:key="index"
-				class="flex items-start justify-end gap-20"
+				class="flex flex-col items-start md:flex-row md:justify-end md:gap-20"
 			>
-				<h1 class="w-96 text-right text-3xl font-extrabold"> {{ category.category }}</h1>
-				<div class="w-96 divide-y">
+				<h1 class="text-3xl font-extrabold md:w-96 md:text-right"> {{ faq.category }}</h1>
+				<div class="divide-y md:w-96">
 					<div
-						v-for="(item, id) in category.questions"
+						v-for="(item, id) in faq.questions"
 						:key="id"
-						class="flex h-full flex-col"
+						class="accordion flex h-full flex-col"
 						@click="showAnswer(item.question)"
 					>
 						<h3 class="cursor-pointer py-2 text-xl font-semibold"
@@ -21,9 +26,9 @@
 						</h3>
 
 						<div
-							class="flex h-0 overflow-hidden transition-all duration-300 ease-in-out"
+							class="flex h-0 overflow-hidden opacity-0 transition duration-1000 ease-in-out"
 							:class="{
-								'!h-full': activeQuestion === item.question,
+								'flex h-full !opacity-100': activeQuestion === item.question,
 							}"
 						>
 							<span>
@@ -33,6 +38,11 @@
 					</div>
 				</div>
 			</div>
+			<h3 class="max-w-[600px] text-center"
+				>Bu liste, Petrikor'un sunduğu programlar ve yapısını temel alarak
+				oluşturulmuştur. Eklemek veya detaylandırmak istediğiniz konular varsa mail
+				adresimiz üzerinden bize ulaşabilirsiniz!
+			</h3>
 		</div>
 	</div>
 </template>
@@ -55,105 +65,90 @@ const faqs = [
 		category: 'Genel Sorular',
 		questions: [
 			{
-				question: 'Mentorluk programının amacı nedir?',
+				question: 'Petrikor nedir ve ne yapar?',
 				answer:
-					'Mentorluk programının amacı, hukuk öğrencilerini deneyimli hukuk profesyonelleriyle buluşturarak eğitim ve kariyer yollarında rehberlik, destek ve pratik tavsiyeler sağlamaktır.',
+					'Petrikor, sosyal bağların gücüne inanan ve katılımcılarıyla birlikte verimli, sürdürülebilir ve etkili olmayı hedefleyen bir topluluktur. Mentörlük programları ve sektör panelleriyle bilgi ve deneyim paylaşımı sağlarken, aynı zamanda bireyler arasında sosyal köprüler kurarak toplumsal etki yaratmayı amaçlıyoruz. ',
 			},
 			{
-				question: 'Mentorluk programına kimler katılabilir?',
+				question: 'Petrikor’a kimler katılabilir?',
 				answer:
-					'Program, çalışma alanı veya eğitim yılı fark etmeksizin tüm hukuk öğrencilerine açıktır. Mentorlar genellikle avukatlar, hakimler ve hukuk akademisyenleri gibi deneyimli hukuk profesyonelleridir.',
+					'Mentörlük programlarımız ve etkinliklerimiz, kariyerini geliştirmek isteyen öğrencilere, genç profesyonellere ve belirli alanlarda derinleşmek isteyen bireylere açıktır. ',
 			},
 			{
-				question: 'Mentorluk programına nasıl kayıt olabilirim?',
+				question: 'Petrikor’un sunduğu programlar nelerdir?',
 				answer:
-					'Kayıt olmak için web sitemizde bulunan başvuru formunu doldurmanız gerekmektedir. Başvurunuzu inceledikten sonra, ilgi alanlarınız ve hedefleriniz doğrultusunda size uygun bir mentorla eşleştirileceksiniz.',
+					'Petrikor, mentörlük programları, sektör panelleri, hukuk ve girişimcilik alanındaki etkinlikler ve profesyonel gelişim atölyeleri sunmaktadır. ',
 			},
 			{
-				question: 'Mentorluk programına katılmanın bir maliyeti var mı?',
+				question: 'Petrikor’a nasıl üye olabilirim?',
 				answer:
-					'Hayır, mentorluk programına katılmak tüm hukuk öğrencileri için ücretsizdir.',
-			},
-		],
-	},
-	{
-		category: 'Mentor-Menti Eşleştirme',
-		questions: [
-			{
-				question: 'Mentor ve mentiler nasıl eşleştiriliyor?',
-				answer:
-					'Eşleştirmeler, mentinin ilgi alanları, kariyer hedefleri ve mentorun uzmanlık ve deneyimlerine göre yapılmaktadır. Karşılıklı fayda sağlayacak eşleşmeler yapmaya çalışıyoruz.',
-			},
-			{
-				question: 'Bir mentorla eşleşmek ne kadar sürer?',
-				answer:
-					'Eşleştirme süreci, mentorların uygunluğuna ve mentinin özel ihtiyaçlarına bağlı olarak birkaç hafta sürebilir.',
-			},
-			{
-				question: 'Belirli bir mentoru talep edebilir miyim?',
-				answer:
-					'Belirli bir mentorla eşleştirileceğinizi garanti edemesek de, tercihlerinizi belirtebilirsiniz ve bu tercihleri karşılamak için elimizden geleni yaparız.',
+					'Üyelik için resmi web sitemiz veya sosyal medya hesaplarımız üzerinden duyurulan başvuru süreçlerini takip edebilirsiniz.',
 			},
 		],
 	},
 	{
-		category: 'Mentorluk Programının Yapısı',
+		category: 'Mentörlük Programı Hakkında',
 		questions: [
 			{
-				question: 'Mentorluk ilişkisi ne kadar sürer?',
+				question: 'Mentörlük programı nedir?',
 				answer:
-					'Mentorluk ilişkisi genellikle bir akademik yıl sürer, ancak mentor ve menti arasında karşılıklı anlaşma ile uzatılabilir.',
+					'Mentörlük programımız, belirli alanlarda uzmanlaşmış mentörler ile katılımcıları bir araya getirerek birebir veya grup görüşmeleri aracılığıyla bilgi ve deneyim aktarımını sağlar. ',
 			},
 			{
-				question: 'Mentorlar ve mentiler ne sıklıkla görüşmeli?',
+				question: 'Hangi alanlarda mentörlük veriliyor?',
 				answer:
-					'Mentorlar ve mentilerin en az ayda bir görüşmelerini öneriyoruz, ancak sıklık, her iki tarafın ihtiyaç ve programlarına göre ayarlanabilir.',
+					'Mentörlük programımız şu konuları kapsar: ⁠Hukukta Yapay Zeka, ⁠Finans ve Rekabet Hukuku, ⁠Fikri Mülkiyet ve Sınai Haklar ⁠Girişimcilik ve Hukuk Teknolojileri, ⁠KVKK (Kişisel Verilerin Korunması Kanunu) ',
+			},
+
+			{
+				question: 'Programa nasıl başvurabilirim?',
+				answer:
+					'Başvuru süreci sosyal medya hesaplarımız ve web sitemiz üzerinden duyurulmaktadır. Başvurular genellikle kısa bir motivasyon yazısı ve temel bilgileri içeren bir form aracılığıyla alınır. ',
 			},
 			{
-				question: 'Mentoruma ne hakkında sorular sormalıyım?',
+				question: 'Mentörlük programına katılmak ücretli mi?',
 				answer:
-					'Yaygın konular arasında kariyer tavsiyeleri, akademik rehberlik, ağ kurma stratejileri, iş-yaşam dengesi ve profesyonel gelişim bulunur. Mentorunuz ayrıca hukuk alanının belirli alanlarına dair bilgiler ve kişisel deneyimlerini paylaşabilir.',
+					'Programlarımızın çoğu ücretsizdir. Ancak bazı özel eğitimler ve etkinlikler için küçük bir katılım ücreti alınabilir. ',
 			},
 			{
-				question: 'Mentorumla bir problem yaşarsam ne yapmalıyım?',
+				question: 'Program süreci nasıl işliyor?',
 				answer:
-					'Eğer mentorunuzla bir sorun yaşarsanız, lütfen mentorluk programı koordinatörü ile iletişime geçin. Her iki taraf için de olumlu bir deneyim sağlamak adına çatışmaları çözmeye yardımcı olmak için buradayız.',
+					'Program, bir oryantasyon haftası ile başlar. Ardından, her hafta belirlenen gruplar halinde uzman mentörlerle online veya yüz yüze oturumlar gerçekleştirilir.',
 			},
 		],
 	},
 	{
-		category: 'Faydalar ve Beklentiler',
+		category: 'Etkinlikler ve Paneller',
 		questions: [
 			{
-				question: 'Bir mentora sahip olmanın faydaları nelerdir?',
+				question: 'Petrikor etkinliklerine nasıl katılabilirim?',
 				answer:
-					'Bir mentora sahip olmak, hukuk öğrencilerine değerli bilgiler, kişisel tavsiyeler ve eğitim ve kariyer yollarında destek sağlar. Mentorlar, öğrencilerin hedefler belirlemesine ve bu hedeflere ulaşmasına, profesyonel ağlarını genişletmesine ve yeteneklerine olan güvenlerini artırmasına yardımcı olabilir.',
+					'Sosyal medya hesaplarımızdan ve web sitemizden etkinlik duyurularımızı takip ederek katılım sağlayabilirsiniz.  ',
 			},
 			{
-				question: 'Mentilerden beklentiler nelerdir?',
+				question: 'Etkinlikler yüz yüze mi yoksa online mı gerçekleşiyor?',
 				answer:
-					'Mentilerin iletişimde proaktif olması, mentorlarının zamanına saygı göstermesi, geri bildirime açık olması ve kişisel ve profesyonel gelişimlerine bağlı olmaları beklenir.',
+					'Etkinliklerimizin çoğu online olarak düzenlenmektedir. Ancak bazı paneller ve network buluşmaları fiziksel olarak gerçekleştirilmektedir.',
 			},
 			{
-				question: 'Mentorlerden beklentiler nelerdir?',
+				question: 'Etkinliklere katılmak için herhangi bir ön koşul var mı?',
 				answer:
-					'Mentorların rehberlik sağlamaları, bilgi ve deneyimlerini paylaşmaları, düzenli toplantılar için uygun olmaları ve mentinin büyüme ve gelişimini desteklemeleri beklenir.',
+					'Genellikle etkinliklerimiz herkese açık olmakla birlikte, bazı paneller ve atölyeler için önceden kayıt yaptırmak gerekebilir.  s',
 			},
 		],
 	},
 	{
-		category: 'Ek Destek',
+		category: 'Networking ve Ofis Buluşmaları',
 		questions: [
 			{
-				question:
-					'Mentorluk sürecinden en iyi şekilde yararlanabilmem için kaynaklar mevcut mu?',
+				question: 'Ofis buluşmaları nedir?',
 				answer:
-					'Evet, mentorluk kılavuzları, hedef belirleme şablonları ve hukuk öğrencileri ve hukuk profesyonelleri için ilgili konularda web seminerleri ve atölye çalışmaları gibi çeşitli kaynaklar sağlıyoruz.',
+					'Her hafta farklı bir hukuk ofisinde düzenlenen etkinliklerdir. Katılımcılar, ofis çalışanlarıyla tanışarak sektörü daha yakından tanıma fırsatı bulurlar. ',
 			},
 			{
-				question: 'Mentorluk programı hakkında geri bildirim nasıl verebilirim?',
+				question: 'Ofis ziyaretlerine nasıl katılabilirim?',
 				answer:
-					'Geri bildiriminizi memnuniyetle karşılıyoruz! Web sitemiz üzerinden, e-posta ile veya düzenli anketlerimize katılarak geri bildirim sağlayabilirsiniz. Girdiğiniz bilgiler, gelecekteki katılımcılar için programı iyileştirmemize yardımcı olur.',
+					'Ofis ziyaretleri için kayıt yaptırmanız gerekmektedir. Kontenjanlar sınırlı olduğundan erken başvuru önerilir. ',
 			},
 		],
 	},
@@ -161,14 +156,10 @@ const faqs = [
 </script>
 
 <style scoped>
-.p-item {
-	height: 0;
-	overflow: hidden;
-	transition: 500ms;
-}
-
-.p-shown {
-	height: auto;
-	transition: 500ms;
+.image-text {
+	background-image: url(https://static.vecteezy.com/system/resources/thumbnails/043/500/628/small_2x/green-leaves-pattern-background-natural-background-and-wallpaper-photo.jpg);
+	background-size: cover;
+	background-clip: text;
+	color: transparent;
 }
 </style>

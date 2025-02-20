@@ -4,9 +4,11 @@ module.exports = {
 			sans: 'Lexend',
 			lexend: 'Lexend',
 			logo: '"Roboto Slab"',
+			mega: '"Geologica"',
 			playfair: 'Playfair',
 			bodoni: '"Bodoni Moda"',
 			abel: 'Abel',
+			italica: 'Birthstone',
 		},
 
 		screens: {

@@ -30,7 +30,10 @@ export default defineNuxtConfig({
 		},
 	},
 
-	ssr: false,
+	nitro: {
+		preset: 'static',
+		prerender: { routes: ['/', '/news/1', '/news/2', '/news/3', '/news/4'] },
+	},
 
 	devServer: {
 		port: 3030,

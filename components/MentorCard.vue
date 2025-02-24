@@ -36,7 +36,7 @@
 	</div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const emit = defineEmits(['toContact'])
 
 defineProps({

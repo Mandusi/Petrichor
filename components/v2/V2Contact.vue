@@ -5,7 +5,7 @@
 		>
 			<div class="flex w-full flex-col md:w-3/5 md:border-r-2 md:px-8">
 				<h2
-					class="mb-6 text-center font-mega text-5xl font-bold text-[#252525] sm:text-6xl md:text-7xl"
+					class="mb-6 text-center font-mega text-5xl font-bold text-[#252525] sm:text-6xl md:text-5xl"
 					>İletişime Geç</h2
 				>
 
@@ -27,8 +27,8 @@
 					</div>
 					<div class="flex w-16 flex-col items-center justify-center">
 						<a
-							href="https://www.linkedin.com"
-							class="flex w-full items-center justify-center"
+							href="https://www.linkedin.com/company/petrikor-mentorship/"
+							class="w-full"
 						>
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
 								<path
@@ -36,17 +36,17 @@
 									d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
 								/>
 							</svg>
-							<span></span>
 						</a>
 					</div>
 					<div class="flex w-16 flex-col items-center justify-center">
-						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-							<path
-								fill="#5497a7"
-								d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zm90.7 96.7c9.7-2.6 19.9 2.3 23.7 11.6l20 48c3.4 8.2 1 17.6-5.8 23.2L168 231.7c16.6 35.2 45.1 63.7 80.3 80.3l20.2-24.7c5.6-6.8 15-9.2 23.2-5.8l48 20c9.3 3.9 14.2 14 11.6 23.7l-12 44C336.9 378 329 384 320 384C196.3 384 96 283.7 96 160c0-9 6-16.9 14.7-19.3l44-12z"
-							/>
-						</svg>
-						<span></span>
+						<a href="mailto:petrikorment@gmail.com" class="w-full">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+								<path
+									fill="#5497a7"
+									d="M64 32C28.7 32 0 60.7 0 96L0 416c0 35.3 28.7 64 64 64l320 0c35.3 0 64-28.7 64-64l0-320c0-35.3-28.7-64-64-64L64 32zM218 271.7L64.2 172.4C66 156.4 79.5 144 96 144l256 0c16.5 0 30 12.4 31.8 28.4L230 271.7c-1.8 1.2-3.9 1.8-6 1.8s-4.2-.6-6-1.8zm29.4 26.9L384 210.4 384 336c0 17.7-14.3 32-32 32L96 368c-17.7 0-32-14.3-32-32l0-125.6 136.6 88.2c7 4.5 15.1 6.9 23.4 6.9s16.4-2.4 23.4-6.9z"
+								/>
+							</svg>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -62,7 +62,7 @@
 						type="text"
 						placeholder="Adınızı ve soyadınızı girin"
 						required
-						class="mt-1 block w-full rounded-3xl border border-gray-300 bg-transparent p-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+						class="mt-1 block w-full rounded-3xl border border-gray-300 bg-transparent p-4 focus:outline-none focus:ring-2 focus:ring-[#5497a7]"
 					/>
 					<span v-if="errors.name" class="text-xs text-red-500">{{ errors.name }}</span>
 				</div>
@@ -77,7 +77,7 @@
 						type="email"
 						placeholder="örnek123@mail.com"
 						required
-						class="mt-1 block w-full rounded-3xl border border-gray-300 bg-transparent p-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+						class="mt-1 block w-full rounded-3xl border border-gray-300 bg-transparent p-4 focus:outline-none focus:ring-2 focus:ring-[#5497a7]"
 					/>
 					<span v-if="errors.email" class="text-xs text-red-500">{{ errors.email }}</span>
 				</div>
@@ -91,7 +91,7 @@
 						v-model="form.message"
 						required
 						placeholder="Bize kendinizden ve hedeflerinizden bahsedin."
-						class="mt-1 block w-full rounded-3xl border border-gray-300 bg-transparent p-4 focus:outline-none focus:ring-2 focus:ring-amber-700"
+						class="mt-1 block w-full rounded-3xl border border-gray-300 bg-transparent p-4 focus:outline-none focus:ring-2 focus:ring-[#5497a7]"
 						rows="4"
 					></textarea>
 					<span v-if="errors.message" class="text-xs text-red-500">{{
@@ -103,17 +103,17 @@
 					type="submit"
 					class="w-full rounded-3xl bg-[#307473] py-3 font-semibold text-white transition duration-300 hover:bg-[#09342b]"
 				>
-					Başvur
+					Gönder
 				</button>
+				<div v-if="successMessage" class="mt-4 text-center font-medium text-green-600">{{
+					successMessage
+				}}</div>
 			</form>
-			<div v-if="successMessage" class="mt-4 text-center font-medium text-green-600">{{
-				successMessage
-			}}</div>
 		</div>
 	</div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import emailjs from '@emailjs/browser'
 
 const config = useRuntimeConfig()
@@ -135,7 +135,7 @@ const form = ref({
 	message: '',
 })
 
-const errors = ref({})
+const errors = ref<any>({})
 const successMessage = ref('')
 
 const validateForm = () => {

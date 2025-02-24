@@ -28,6 +28,6 @@
 		</div>
 	</div>
 </template>
-<script setup>
+<script setup lang="ts">
 const emit = defineEmits(['toFaq', 'toHome', 'toNews', 'toAboutUs', 'toContact'])
 </script>

@@ -1,10 +1,11 @@
 <template>
-	<div ref="ScrollPosition" class="p-5 md:p-10" @click="hideAnswer()">
+	<div ref="ScrollPosition" class="p-5 md:p-10" @click="hideAnswer">
 		<div
 			class="flex flex-col items-center justify-center gap-10 rounded-3xl bg-white p-10 pt-20 transition-all duration-300"
 		>
 			<div class="max-w-[800px]">
-				<h1 class="image-text max-w-[800px] text-center font-mega text-7xl font-extrabold"
+				<h1
+					class="image-text max-w-[800px] font-mega text-5xl font-extrabold md:text-center md:text-7xl"
 					>SIKÇA SORULAN SORULAR</h1
 				>
 			</div>
@@ -47,16 +48,16 @@
 	</div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const activeQuestion = ref()
 const ScrollPosition = ref()
 defineExpose({ ScrollPosition })
 
-function showAnswer(questionId) {
-	activeQuestion.value = questionId
+function showAnswer(question: string) {
+	activeQuestion.value = question
 }
 
-function hideAnswer(event) {
+function hideAnswer(event: any) {
 	if (event.target.nodeName !== 'H3') activeQuestion.value = null
 }
 
@@ -94,12 +95,6 @@ const faqs = [
 				answer:
 					'Mentörlük programımız, belirli alanlarda uzmanlaşmış mentörler ile katılımcıları bir araya getirerek birebir veya grup görüşmeleri aracılığıyla bilgi ve deneyim aktarımını sağlar. ',
 			},
-			{
-				question: 'Hangi alanlarda mentörlük veriliyor?',
-				answer:
-					'Mentörlük programımız şu konuları kapsar: ⁠Hukukta Yapay Zeka, ⁠Finans ve Rekabet Hukuku, ⁠Fikri Mülkiyet ve Sınai Haklar ⁠Girişimcilik ve Hukuk Teknolojileri, ⁠KVKK (Kişisel Verilerin Korunması Kanunu) ',
-			},
-
 			{
 				question: 'Programa nasıl başvurabilirim?',
 				answer:

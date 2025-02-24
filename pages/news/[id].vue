@@ -58,7 +58,7 @@
 </template>
 
 <script setup lang="ts">
-import { announcements } from '~/data/db'
+import { announcements } from '~/data/announcements'
 const route = useRoute()
 const announcementId = computed(() => route.params.id)
 

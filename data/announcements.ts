@@ -1,12 +1,5 @@
-interface announcement {
-	id: number
-	title: string
-	date: string
-	imagePath: string
-	readTime: string
-	content: string[]
-	filePath?: string
-}
+import type { announcement } from './types'
+
 export const announcements: announcement[] = [
 	{
 		id: 4,

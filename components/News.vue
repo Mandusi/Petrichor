@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import { announcements } from '@/data/db'
+import { announcements } from '@/data/announcements'
 
 const ScrollPosition = ref()
 defineExpose({ ScrollPosition })

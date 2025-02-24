@@ -7,9 +7,9 @@
 		@to-contact="navBtnHandler(ContactEl)"
 	/>
 	<News ref="NewsEl" />
-	<V2AboutUs ref="AboutUsEl" />
+	<AboutUs ref="AboutUsEl" />
 	<FAQ ref="FaqEl" />
-	<V2Contact ref="ContactEl" />
+	<Contact ref="ContactEl" />
 
 	<Footer
 		@to-home="navBtnHandler(HomeEl)"

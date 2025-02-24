@@ -12,7 +12,7 @@
 		</div>
 
 		<div class="flex w-full flex-col items-center justify-center gap-6">
-			<V2Navbar
+			<Navbar
 				@to-faq="emit('toFaq')"
 				@to-news="emit('toNews')"
 				@to-contact="emit('toContact')"

@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="mt-10 hidden h-20 w-full max-w-[1200px] rounded-3xl backdrop-blur-3xl md:block md:flex"
+		class="mt-10 hidden h-20 w-full max-w-[1200px] rounded-3xl backdrop-blur-3xl md:flex"
 	>
 		<div class="flex w-full items-center justify-between px-10">
 			<div class="flex grow items-center justify-start">
